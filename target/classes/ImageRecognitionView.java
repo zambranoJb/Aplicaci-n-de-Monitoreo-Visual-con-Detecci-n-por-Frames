@@ -45,35 +45,21 @@ public class ImageRecognitionView extends BorderPane {
     private void layoutComponents() {
         HBox topBar = new HBox(10, btnLoadImage, btnSendToApi);
         topBar.setPadding(new Insets(10));
-        topBar.getStyleClass().add("top-bar");
-
-        btnLoadImage.getStyleClass().add("primary-button");
-        btnSendToApi.getStyleClass().add("secondary-button");
 
         VBox rightBox = new VBox(8, lblClassDetected, lblConfidence);
         rightBox.setPadding(new Insets(10));
         rightBox.setPrefWidth(220);
-        rightBox.getStyleClass().add("side-panel");
-
-        lblClassDetected.getStyleClass().add("info-label");
-        lblConfidence.getStyleClass().add("info-label");
 
         // ImageView y Canvas superpuestos
         StackPane imageStack = new StackPane(imageView, boundingCanvas);
-        imageStack.getStyleClass().add("preview");
         ScrollPane centerScroll = new ScrollPane(imageStack);
         centerScroll.setFitToWidth(true);
         centerScroll.setFitToHeight(true);
 
-        // Combinar centro y panel lateral dentro de una tarjeta para mejor legibilidad
-        HBox centerCombined = new HBox(12, centerScroll, rightBox);
-        centerCombined.setPadding(new Insets(8));
-        centerCombined.getStyleClass().add("card-container");
-
         this.setTop(topBar);
-        this.setCenter(centerCombined);
+        this.setCenter(centerScroll);
+        this.setRight(rightBox);
         this.setPadding(new Insets(8));
-        this.getStyleClass().add("app-root");
     }
 
     // Métodos vacíos (sin lógica)

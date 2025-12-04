@@ -15,7 +15,6 @@
     </properties>
 
     <dependencies>
-        <!-- Dependencias JavaFX (Windows). Si compartes el proyecto en otra OS, cambia el <classifier> apropiadamente -->
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
@@ -31,7 +30,12 @@
     </dependencies>
 
     <build>
-        <sourceDirectory>${basedir}/src</sourceDirectory>
+        <sourceDirectory>${project.basedir}/src</sourceDirectory>
+        <resources>
+            <resource>
+                <directory>${project.basedir}/src</directory>
+            </resource>
+        </resources>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -48,14 +52,6 @@
                 <version>0.0.8</version>
                 <configuration>
                     <mainClass>Main</mainClass>
-                    <modulePaths></modulePaths>
-                    <launcher>javafx:run</launcher>
-                    <systemProperties>
-                        <systemProperty>
-                            <name>prism.order</name>
-                            <value>sw</value>
-                        </systemProperty>
-                    </systemProperties>
                 </configuration>
             </plugin>
         </plugins>
