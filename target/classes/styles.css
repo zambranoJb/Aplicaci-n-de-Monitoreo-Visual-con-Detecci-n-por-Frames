@@ -1,0 +1,153 @@
+/* Hoja de estilos moderna para la aplicación */
+/* Paleta: azul primario, gris neutro, acentos verdes */
+
+/* Root app */
+.app-root {
+    -fx-font-family: "Segoe UI", "Helvetica Neue", Arial;
+    /* Usar la misma imagen de fondo en todas las pantallas */
+    -fx-background-image: url("file:img/image.png");
+    -fx-background-size: cover;
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center center;
+    -fx-background-color: linear-gradient(#f6f8fb, #ffffff);
+}
+
+/* Capa semitransparente para mejorar contraste sobre la imagen */
+.welcome-overlay {
+    -fx-background-color: rgba(0, 0, 0, 0.45);
+}
+
+/* Contenedor de la tarjeta principal en la bienvenida */
+.card-container {
+    -fx-background-color: rgba(255,255,255,0.92);
+    -fx-padding: 14;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.18), 16, 0, 0, 6);
+}
+
+/* Labels inside card should be dark for legibility */
+.card-container .label {
+    -fx-text-fill: #111827;
+}
+
+/* General labels on app-root (outside cards) should be light with subtle shadow */
+.app-root .label {
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.6), 6, 0, 0, 2);
+}
+
+.title-welcome {
+    -fx-font-size: 34px;
+    -fx-font-weight: 700;
+    -fx-text-fill: white;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.45), 6, 0, 0, 2);
+}
+
+.title {
+    -fx-font-size: 28px;
+    -fx-font-weight: 600;
+    -fx-text-fill: #ffffff; /* gris oscuro */
+}
+
+.card {
+    -fx-background-color: white;
+    -fx-padding: 18;
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-effect: dropshadow(gaussian, rgba(31,41,55,0.08), 12, 0.0, 0, 2);
+}
+
+.top-bar {
+    -fx-background-color: transparent;
+    -fx-padding: 12 16 12 16;
+    -fx-spacing: 8;
+}
+
+.primary-button {
+    -fx-background-color: linear-gradient(#0ea5e9, #0369a1);
+    -fx-text-fill: white;
+    -fx-font-weight: 600;
+    -fx-font-size: 14px;
+    -fx-padding: 12 22 12 22;
+    -fx-min-width: 180px;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-effect: dropshadow(gaussian, rgba(14,165,233,0.18), 8, 0, 0, 2);
+}
+.primary-button:hover {
+    -fx-background-color: linear-gradient(#2b6fe6, #2149b0);
+}
+
+.secondary-button {
+    -fx-background-color: rgba(255,255,255,0.9);
+    -fx-border-color: rgba(31,41,55,0.12);
+    -fx-border-radius: 10;
+    -fx-padding: 10 16 10 16;
+    -fx-font-size: 13px;
+    -fx-min-width: 160px;
+    -fx-text-fill: #111827;
+}
+
+.card-container .secondary-button {
+    -fx-background-color: transparent;
+    -fx-border-color: rgba(31,41,55,0.12);
+}
+
+/* Botón moderno para tarjetas (frosted / elevated) */
+.card-button {
+    -fx-background-color: rgba(255,255,255,0.90);
+    -fx-text-fill: #0f172a;
+    -fx-font-weight: 600;
+    -fx-font-size: 14px;
+    -fx-padding: 12 24 12 24;
+    -fx-min-width: 220px;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-border-color: rgba(15,23,42,0.06);
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(2,6,23,0.10), 10, 0, 0, 4);
+}
+.card-button:hover {
+    -fx-background-color: rgba(255,255,255,0.97);
+    -fx-effect: dropshadow(gaussian, rgba(2,6,23,0.16), 12, 0, 0, 6);
+}
+.card-button:focused {
+    -fx-border-color: rgba(59,130,246,0.9);
+    -fx-effect: dropshadow(gaussian, rgba(59,130,246,0.12), 12, 0, 0, 6);
+}
+
+/* Small variant for compact places */
+.card-button.small {
+    -fx-min-width: 140px;
+    -fx-padding: 8 14 8 14;
+    -fx-font-size: 13px;
+}
+
+.info-label {
+    -fx-font-size: 13px;
+    -fx-text-fill: #374151;
+}
+
+.preview {
+    -fx-border-color: #e5e7eb;
+    -fx-border-width: 1;
+    -fx-background-color: #00000005;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-padding: 10;
+}
+
+.side-panel {
+    -fx-background-color: transparent;
+    -fx-padding: 12;
+}
+
+.table-view {
+    -fx-background-color: transparent;
+}
+
+/* Small helpers */
+.muted {
+    -fx-text-fill: #6b7280;
+}

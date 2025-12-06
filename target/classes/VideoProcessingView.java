@@ -29,8 +29,11 @@ public class VideoProcessingView extends BorderPane {
     private void initializeComponents() {
         btnSelectVideo = new Button("Seleccionar video");
         btnProcessVideo = new Button("Procesar video");
+        btnSelectVideo.getStyleClass().add("primary-button");
+        btnProcessVideo.getStyleClass().add("secondary-button");
 
         table = new TableView<>();
+        table.getStyleClass().add("table-view");
         TableColumn<FrameResult, String> colFrame = new TableColumn<>("Frame");
         colFrame.setCellValueFactory(new PropertyValueFactory<FrameResult, String>("frame"));
 
@@ -45,6 +48,9 @@ public class VideoProcessingView extends BorderPane {
 
         frameView = new ImageView();
         frameView.setPreserveRatio(true);
+        frameView.getStyleClass().add("preview");
+
+        frameView.setPreserveRatio(true);
         frameView.setFitWidth(640);
         frameView.setFitHeight(480);
     }
@@ -52,16 +58,24 @@ public class VideoProcessingView extends BorderPane {
     private void layoutComponents() {
         VBox leftPane = new VBox(8, table);
         leftPane.setPadding(new Insets(10));
+        leftPane.getStyleClass().add("side-panel");
 
         VBox rightPane = new VBox(10, new VBox(8, btnSelectVideo, btnProcessVideo), new Label("Frame seleccionado:"),
                 frameView);
         rightPane.setPadding(new Insets(10));
+        rightPane.getStyleClass().add("side-panel");
 
         SplitPane split = new SplitPane(leftPane, rightPane);
         split.setDividerPositions(0.35);
 
-        this.setCenter(split);
+        // Encapsular el SplitPane en una tarjeta para contraste sobre el fondo
+        VBox card = new VBox(split);
+        card.setPadding(new Insets(8));
+        card.getStyleClass().add("card-container");
+
+        this.setCenter(card);
         this.setPadding(new Insets(8));
+        this.getStyleClass().add("app-root");
     }
 
     // Métodos vacíos
